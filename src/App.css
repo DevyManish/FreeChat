@@ -1,0 +1,26 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.message {
+  display: flex;
+  align-items: center;
+  
+}
+
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+.sent p {
+  align-self: flex-end;
+}
+.received p {
+  /* color: black; */
+  margin-left:6px;
+}
