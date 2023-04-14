@@ -18,9 +18,9 @@ Our free group video and chatting platform is designed to connect people from al
 
 ## Deployment
 
-*npm install
-
-*npm run dev
+### Installation
+### 1.npm install
+### 2.npm run dev
 
 *May be sign in with google since localhost isnt authorised try running on this port "localhost:5174/3"
 ### `npm start`
