@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/logo.png";
+
 import Hero from "../assets/img2.jpeg";
 
 import Header from "../components/Header";
@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <>
       <Header/>
-      {/* body starts */}
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
           <img
@@ -50,11 +49,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* body ends */}
-      {/*footer starts*/}
       <Footer/>
     </>
-  );
+  )
 };
 
 export default Home;
