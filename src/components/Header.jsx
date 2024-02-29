@@ -1,8 +1,12 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
+import { getUser, auth, firebase } from "../firebase";
+
 
 const Header = () => {
+  const user = getUser();
+
   return (
     <header className="text-gray-400 bg-gray-900 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -62,23 +66,48 @@ const Header = () => {
             About
           </NavLink>
         </nav>
-        <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
-          Login
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
+        {user ? <SignOut/> : <SignIn/>}
       </div>
     </header>
   );
 };
+
+function SignIn() {
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  };
+
+  return (
+    <>
+      <button
+        size="lg"
+        variant="outlined"
+        color="blue-gray "
+        className="bg-white flex items-center gap-3 p-1.5 rounded-3xl"
+        onClick={signInWithGoogle}
+      >
+        <img
+          src="https://docs.material-tailwind.com/icons/google.svg"
+          alt="metamask"
+          className="h-6 w-6"
+        />
+      </button>
+    </>
+  );
+}
+
+function SignOut() {
+  return (
+    auth.currentUser && (
+      <button
+        className="sign-out bg-[#F7BE38] text-white p-1.5 rounded-lg"
+         onClick={() => auth.signOut()}
+      >
+        Sign Out
+      </button>
+    )   
+  );
+}
 
 export default Header;
