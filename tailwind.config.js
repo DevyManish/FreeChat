@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        customPink: '#4285F4',
+        customColor: '#EAB308',
       },
     },
   },

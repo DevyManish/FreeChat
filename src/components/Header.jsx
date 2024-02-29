@@ -25,7 +25,7 @@ const Header = () => {
             to="/"
             className={({ isActive }) =>
               `mr-5 duration-200 ${
-                isActive ? "text-customPink" : ""
+                isActive ? "text-customColor" : ""
               } hover:text-white`
             }
           >
@@ -35,7 +35,7 @@ const Header = () => {
             to="/services"
             className={({ isActive }) =>
               `mr-5 duration-200 ${
-                isActive ? "text-customPink" : ""
+                isActive ? "text-customColor" : ""
               } hover:text-white`
             }
           >
@@ -45,7 +45,7 @@ const Header = () => {
             to="/contact"
             className={({ isActive }) =>
               `mr-5 duration-200 ${
-                isActive ? "text-customPink" : ""
+                isActive ? "text-customColor" : ""
               } hover:text-white`
             }
           >
@@ -55,7 +55,7 @@ const Header = () => {
             to="/about"
             className={({ isActive }) =>
               `mr-5 duration-200 ${
-                isActive ? "text-customPink" : ""
+                isActive ? "text-customColor" : ""
               } hover:text-white`
             }
           >
