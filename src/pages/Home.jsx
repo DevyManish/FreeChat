@@ -73,9 +73,6 @@ function SignOut() {
         Sign Out
       </button>
     )
-    // <button className="sign-out" onClick={() => auth.signOut()}>
-    //   Sign Out
-    // </button>
   );
 }
 

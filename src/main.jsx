@@ -8,7 +8,10 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import  { Home, Contact, About} from "./pages"
+import  { Home, Contact, About, Chatroom} from "./pages"
+
+const isAuthenticated=false;
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="contact" element={<Contact />} />
       <Route path="about" element={<About />} />
+      <Route path="chat" element={<Chatroom isAuthenticated={isAuthenticated}/>} />
     </Route>
   )
 );
