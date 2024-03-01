@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import  { Home, Contact, About, Chatroom} from "./pages"
 
-const isAuthenticated=false;
+const isAuthenticated=true;
 
 
 const router = createBrowserRouter(
