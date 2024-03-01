@@ -9,9 +9,14 @@ import {
   createRoutesFromElements,
 } from "react-router-dom";
 import  { Home, Contact, About, Chatroom} from "./pages"
+import { getUser} from "./firebase";
 
-const isAuthenticated=true;
+// const isAuthenticated=true;
 
+const isAuthenticated = ()  => {
+  const user = getUser();
+  return user ? true : false;
+};
 
 const router = createBrowserRouter(
   createRoutesFromElements(

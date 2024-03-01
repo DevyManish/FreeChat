@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../assets/img2.jpeg";
 import { getUser, auth, firebase } from "../firebase";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const user = getUser();
@@ -79,12 +80,14 @@ function SignOut() {
 function ChatRoom() {
   return (
     <>
-      <button
-        type="button"
-        className="text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#F7BE38]/50 me-2 mb-2"
-      >
-        Connect to ChatRoom
-      </button>
+      <Link to="/chat">
+        <button
+          type="button"
+          className="text-white bg-[#F7BE38] hover:bg-[#F7BE38]/90 focus:ring-4 focus:outline-none focus:ring-[#F7BE38]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#F7BE38]/50 me-2 mb-2"
+        >
+          Connect to ChatRoom
+        </button>
+      </Link>
     </>
   );
 }
