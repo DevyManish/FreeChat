@@ -10,8 +10,11 @@ const firestore = firebase.firestore();
 
 const Chatroom = ({ isAuthenticated }) => {
   const dummy = useRef();
+  
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limit(25);
+
+
 
   const [messages] = useCollectionData(query, { idField: "id" });
 
@@ -45,27 +48,29 @@ const Chatroom = ({ isAuthenticated }) => {
                 ))}
               <span ref={dummy}></span>
             </main>
-            <div className="h-10vh bg-gray-800 w-full max-w-screen-md flex justify-items-center ">
+            <div className="w-full max-w-screen flex justify-center items-center ">
+            <div className="h-10vh bg-white rounded-2xl w-full max-w-screen-md flex justify-center items-center ">
               <form
                 onSubmit={sendMessage}
-                className="h-10vh  bg-gray-800 w-full max-w-screen-md flex items-center justify-center"
+                className="h-10vh  w-full max-w-screen-md flex items-center justify-center"
               >
                 <input
                   value={formValue}
                   onChange={(e) => setFormValue(e.target.value)}
                   placeholder="say something nice"
                   // className="w-full h-full px-4 text-lg bg-gray-700 text-white outline-none"
-                  className="rounded-2xl bg-gray-100 py-3 px-5 w-full"
+                  className="rounded-2xl max-w-screen bg-gray-100 py-3 px-5 w-full outline-none"
                 />
 
                 <button
                   type="submit"
                   disabled={!formValue}
-                  className="bg-blue-600 text-white px-4 py-3 rounded-2xl"
+                  className="bg-blue-600 text-white px-6 py-4 rounded-tl-none rounded-tr-2xl rounded-br-2xl"
                 >
                   <IoMdSend />
                 </button>
               </form>
+            </div>
             </div>
           </div>
         </>
