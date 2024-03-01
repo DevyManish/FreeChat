@@ -90,15 +90,15 @@ function ChatMessage(props) {
           src={
             photoURL || "https://api.adorable.io/avatars/23/abott@adorable.png"
           }
-          className="logo-img rounded-full"
+          className="logo-img rounded-full mt-2"
           width={40}
           height={40}
         />
         <p
           className={`py-1 px-4 " ${
             uid === auth.currentUser.uid
-              ? "rounded-lg mr-2 flex flex-row-reverse bg-blue-500 text-white self-end"
-              : "rounded-lg ml-2 bg-gray-300 text-black"
+              ? "mt-2 rounded-lg mr-2 flex flex-row-reverse bg-blue-500 text-white self-end"
+              : "mt-2 rounded-lg ml-2 bg-gray-300 text-black"
           }`}
         >
           {text}
