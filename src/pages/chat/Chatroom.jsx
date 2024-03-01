@@ -37,7 +37,7 @@ const Chatroom = ({ isAuthenticated }) => {
     <>
       {isAuthenticated ? (
         <>
-          <div className="bg-[#111827] px-10 h-150">
+          <div className="bg-[#111827] md:px-10 h-150">
             <main className="p-4 h-100vh overflow-y-scroll flex flex-col">
               {messages &&
                 messages.map((msg) => (
