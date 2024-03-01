@@ -95,10 +95,10 @@ function ChatMessage(props) {
           height={40}
         />
         <p
-          className={`py-1 px-4 rounded-xl" ${
+          className={`py-1 px-4 " ${
             uid === auth.currentUser.uid
-              ? "mr-2 flex flex-row-reverse bg-blue-500 text-white self-end"
-              : " ml-2 bg-gray-300 text-black"
+              ? "rounded-lg mr-2 flex flex-row-reverse bg-blue-500 text-white self-end"
+              : "rounded-lg ml-2 bg-gray-300 text-black"
           }`}
         >
           {text}
