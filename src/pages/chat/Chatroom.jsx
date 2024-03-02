@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef} from "react";
 import Error from "../../components/ErrorPage";
 
 import { IoMdSend } from "react-icons/io";
 
 import { getUser, auth, firebase} from "../../firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import Loader from "../../components/Loader";
 
 const firestore = firebase.firestore();
 
@@ -37,10 +38,14 @@ const Chatroom = () => {
     dummy.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  //spinner
+
+
   return (
     <>
       {user ? (
         <>
+          <Loader/>
           <div className="bg-[#111827] md:px-10 h-150">
             <main className="p-4 h-100vh overflow-y-scroll flex flex-col">
               {messages &&
@@ -49,18 +54,18 @@ const Chatroom = () => {
                 ))}
               <span ref={dummy}></span>
             </main>
-            <div className="w-full max-w-screen flex justify-center items-center ">
+            <div className="mt-4 w-full max-w-screen flex justify-center items-center ">
             <div className="h-10vh bg-white rounded-2xl w-full max-w-screen-md flex justify-center items-center ">
               <form
                 onSubmit={sendMessage}
-                className="h-10vh  w-full max-w-screen-md flex items-center justify-center"
+                className="h-10vh w-full max-w-screen-md flex items-center justify-center"
               >
                 <input
                   value={formValue}
                   onChange={(e) => setFormValue(e.target.value)}
                   placeholder="say something nice"
                   // className="w-full h-full px-4 text-lg bg-gray-700 text-white outline-none"
-                  className="rounded-2xl max-w-screen bg-gray-100 py-3 px-5 w-full outline-none"
+                  className=" rounded-2xl max-w-screen bg-gray-100 py-3 px-5 w-full outline-none"
                 />
 
                 <button
