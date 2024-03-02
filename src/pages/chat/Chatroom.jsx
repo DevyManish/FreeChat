@@ -16,8 +16,6 @@ const Chatroom = () => {
   const messagesRef = firestore.collection("messages");
   const query = messagesRef.orderBy("createdAt").limit(25);
 
-
-
   const [messages] = useCollectionData(query, { idField: "id" });
 
   const [formValue, setFormValue] = useState("");
@@ -46,8 +44,8 @@ const Chatroom = () => {
       {user ? (
         <>
           <Loader/>
-          <div className="bg-[#111827] md:px-10 h-150">
-            <main className="p-4 h-100vh overflow-y-scroll flex flex-col">
+          <div className="bg-[#111827] md:px-12 h-150">
+            <main className="py-4 px-12 h-100vh overflow-y-scroll no-scrollbar flex flex-col">
               {messages &&
                 messages.map((msg) => (
                   <ChatMessage key={msg.id} message={msg} />

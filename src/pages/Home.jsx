@@ -18,11 +18,11 @@ const Home = () => {
           />
           <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-              Relish Free Video Conferencing{" "}
+              Relish Free Group Conversations{" "}
             </h1>
             <p className="mb-8 leading-relaxed">
-              A web-based tool that enables users to connect with each other in
-              real-time using video and audio technology.Easily connect with
+              A web-based tool that enables multiple users to connect with each other in
+              real-time using simple messaging services. Easily connect with
               family,friends and colleagues at a simple click.
             </p>
             <div className="flex w-full justify-center items-end">
