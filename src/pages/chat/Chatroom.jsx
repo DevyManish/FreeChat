@@ -3,12 +3,13 @@ import Error from "../../components/ErrorPage";
 
 import { IoMdSend } from "react-icons/io";
 
-import { auth, firebase } from "../../firebase";
+import {  getUser, auth, firebase} from "../../firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const firestore = firebase.firestore();
 
-const Chatroom = ({ isAuthenticated }) => {
+const Chatroom = () => {
+  const user = getUser();
   const dummy = useRef();
   
   const messagesRef = firestore.collection("messages");
@@ -38,7 +39,7 @@ const Chatroom = ({ isAuthenticated }) => {
 
   return (
     <>
-      {isAuthenticated ? (
+      {user ? (
         <>
           <div className="bg-[#111827] md:px-10 h-150">
             <main className="p-4 h-100vh overflow-y-scroll flex flex-col">

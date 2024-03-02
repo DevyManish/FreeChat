@@ -11,12 +11,12 @@ import {
 import  { Home, Contact, About, Chatroom} from "./pages"
 import { getUser} from "./firebase";
 
-// const isAuthenticated=true;
+// const isAuthenticated=false;
 
-const isAuthenticated = ()  => {
-  const user = getUser();
-  return user ? true : false;
-};
+// const isAuthenticated = ()  => {
+//   const user = getUser();
+//   return user ? true : false;
+// };
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +24,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="contact" element={<Contact />} />
       <Route path="about" element={<About />} />
-      <Route path="chat" element={<Chatroom isAuthenticated={isAuthenticated}/>} />
+      <Route path="chat" element={<Chatroom/>} />
     </Route>
   )
 );
