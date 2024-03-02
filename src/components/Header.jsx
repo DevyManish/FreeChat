@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import { Link, NavLink } from "react-router-dom";
 import { getUser, auth, firebase } from "../firebase";
-
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
   const user = getUser();
@@ -36,16 +36,6 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
-            to="/services"
-            className={({ isActive }) =>
-              `mr-5 duration-200 ${
-                isActive ? "text-customColor" : ""
-              } hover:text-white`
-            }
-          >
-            Services
-          </NavLink>
-          <NavLink
             to="/contact"
             className={({ isActive }) =>
               `mr-5 duration-200 ${
@@ -65,8 +55,8 @@ const Header = () => {
           >
             About
           </NavLink>
+          <div>{user ? <SignOut /> : <SignIn />}</div>
         </nav>
-        {user ? <SignOut/> : <SignIn/>}
       </div>
     </header>
   );
@@ -102,11 +92,11 @@ function SignOut() {
     auth.currentUser && (
       <button
         className="sign-out bg-[#F7BE38] text-white p-1.5 rounded-lg"
-         onClick={() => auth.signOut()}
+        onClick={() => auth.signOut()}
       >
-        Sign Out
+        <FaSignOutAlt />
       </button>
-    )   
+    )
   );
 }
 

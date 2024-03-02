@@ -3,7 +3,7 @@ import Error from "../../components/ErrorPage";
 
 import { IoMdSend } from "react-icons/io";
 
-import {  getUser, auth, firebase} from "../../firebase";
+import { getUser, auth, firebase} from "../../firebase";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 
 const firestore = firebase.firestore();
