@@ -51,7 +51,7 @@ const Chatroom = () => {
     { loading ? 
           <Loader/> : <>      {user ? (
             <>
-              <div className="bg-[#111827] md:px-12 h-150">
+              <div className="bg-[#111827] md:px-24 h-150 ">
                 <main className="py-4 px-12 h-100vh overflow-y-scroll no-scrollbar flex flex-col">
                   {messages &&
                     messages.map((msg) => (
