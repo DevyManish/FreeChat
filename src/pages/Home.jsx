@@ -1,4 +1,4 @@
-import React from "react";
+
 import Hero from "../assets/img2.jpeg";
 import { getUser, auth, firebase } from "../firebase";
 import { Link } from "react-router-dom";
@@ -68,15 +68,15 @@ function SignIn() {
   );
 }
 
-function SignOut() {
-  return (
-    auth.currentUser && (
-      <button className="sign-out" onClick={() => auth.signOut()}>
-        Sign Out
-      </button>
-    )
-  );
-}
+// function SignOut() {
+//   return (
+//     auth.currentUser && (
+//       <button className="sign-out" onClick={() => auth.signOut()}>
+//         Sign Out
+//       </button>
+//     )
+//   );
+// }
 
 function ChatRoom() {
   return (
